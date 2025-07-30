@@ -3,6 +3,7 @@ pandas==2.2.2
 # or remove torch temporarily if not essential
 streamlit-autorefresh  # <- Remove version pinning
 torch==2.1.2
+openpyxl
 
 pandas==2.2.2
 matplotlib==3.7.1
