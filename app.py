@@ -352,9 +352,9 @@ def main():
 # --- ANALYZE COMMENTS PAGE ---
 def analyze():
     add_bg_from_local("background.png")
-    st.title("💬 Sentiment Classification with Primary Model")
+    st.title("Sentiment Classification with Primary Model")
 
-    if st.button("🏠 Back to Home"):
+    if st.button("Back to Home"):
         st.session_state.page = "home"
         return
 
@@ -423,7 +423,7 @@ def analyze():
         return chunk
 
     uploaded_file = st.file_uploader("📄 Upload CSV, Excel, PDF, TXT, or JSON", type=["csv", "xlsx", "pdf", "txt", "json"])
-    manual_input = st.text_area("✏️ Or paste/enter comments manually (one per line):", height=200)
+    manual_input = st.text_area("Type or paste/enter comments manually (one per line):", height=200)
 
     if uploaded_file:
         results = []
@@ -445,7 +445,7 @@ def analyze():
     elif manual_input.strip():
         lines = [line.strip() for line in manual_input.split("\n") if line.strip()]
         df_manual = pd.DataFrame({"Comments": lines})
-        with st.spinner("🔍 Analyzing manual input..."):
+        with st.spinner("Analyzing manual input..."):
             df_results = process_chunk(df_manual)
         st.success("✅ Analysis complete!")
         st.dataframe(df_results)
