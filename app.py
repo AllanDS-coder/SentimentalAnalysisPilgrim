@@ -363,6 +363,86 @@ def analyze():
         return
 
     themes_topics = {
+        "Transport & Travel": ["bus", "car", "road", "roads", "transport", "transportation", "ride", "route", "driver",
+                           "passengers", "commute", "shuttles", "travelling", "departed", "departure", "arrivals",
+                           "mobility", "scheduled", "delays", "punctuality", "traffic", "jam", "stops", "rerouted",
+                           "infrastructure", "transitions", "retarded", "crowding", "station", "vehicle", "vehicles",
+                           "moved", "traveling", "transported", "drivers", "bypass", "walking", "walk", "passenger",
+                           "landing", "tracks", "journey", "logistics", "ride", "international", "flights", "flight",
+                           "maps", "schedule", "timeline", "clock", "delay", "hurry", "missed", "operations", "travel",
+                           "update", "coordination", "timeliness", "planning", "rapid", "stuck", "maps", "taxi", "train",
+                           "transporting", "transit", "arrivals", "departures", "schedules", "delays", "rides", "fleet",
+                           "highway", "traffic", "transfers", "routes", "passengers", "transportation", "waiting",
+                           "luggage", "flights"],
+        
+        "Accommodation & Facilities": ["accommodation", "facilities", "residences", "housing", "hotels", "hoteling", "rooms",
+                                   "house", "homes", "sites", "locations", "residential", "setup", "availability", "space",
+                                   "relaxing", "furniture", "utilities", "amenities", "bed", "bedding", "bedroom", "interior",
+                                   "carpets", "floor", "equipment", "units", "spacious", "open", "quarters", "water",
+                                   "electricity", "surfaces", "ventilation", "pillows", "lobby", "cleanliness", "air conditioning",
+                                   "sanitation", "center", "laundry", "sinks", "bathroom", "bathrooms", "baths", "office",
+                                   "built", "swimming", "stable", "shower", "resort", "pools", "lodging", "parking", "belongings",
+                                   "wall", "windows", "door", "resort", "pool", "usability", "station", "rooms", "linen", "mattress",
+                                   "pillows", "beds", "lighting", "air conditioning", "elevator", "washroom", "toiletries", "shampoo",
+                                   "soap", "towels", "minibar", "decor", "furniture", "chairs", "tables", "tiles", "carpets", "wallpaper",
+                                   "upholstery", "amenities", "signage", "reception", "lobby", "soundproofing", "layout"],
+        
+        "Hotel Room Conditions & Cleanliness": ["room", "rooms", "cleanliness", "housekeeping", "tidy", "stains", "stained", "unclean",
+                                            "dirt", "dusty", "smell", "odor", "bathrooms", "toilet", "bathroom", "bedding", "bed",
+                                            "washed", "hygiene", "hygienic", "towels", "garbage", "neat", "windows", "sheets", "cleaning",
+                                            "maintained", "spider", "insects", "bath", "pillows", "cleaning", "air", "smell", "ventilation",
+                                            "broken", "damaged", "uncleanliness", "dirty", "poorly", "spider", "shower", "wall", "noise",
+                                            "silence", "dust", "stains", "floor", "neatness", "sanitation", "clean", "sanitary", "spotless",
+                                            "tidy", "unkempt", "dirty", "mold", "dustbin", "contamination", "sticky", "dust", "pests",
+                                            "infestation", "mildew", "upkeep", "cleaning", "washing", "garbage", "stains", "laundry", "odors",
+                                            "fresh", "polished", "smelly"],
+        
+        "Staff Attitude & Support": ["staff", "employees", "officials", "officers", "support", "guided", "guiding", "cooperation",
+                                 "cooperative", "teamwork", "kindness", "friendly", "friendliness", "warmth", "patient",
+                                 "compassion", "courteous", "respectful", "caring", "communicated", "helpful", "attitude", "sincerity",
+                                 "dedication", "behaved", "temperament", "humility", "accountability", "willingness", "listening",
+                                 "approachable", "respect", "encouragement", "supporter", "assisted", "treatment", "service", "thankfulness",
+                                 "support", "interacting", "greeted", "greetings", "counseling", "devotion", "understanding", "cheerful",
+                                 "tact", "assisting", "manners", "helping", "helpfulness", "counselor", "training", "trained", "assistant",
+                                 "receptionist", "team", "employee", "assisted", "welcomed", "praised", "communicative", "proactive",
+                                 "responsive", "helpfulness", "rude", "friendly", "courteous", "supportive", "professional", "caring",
+                                 "empathetic", "approachable", "attentive", "knowledgeable", "honest", "respectful", "welcoming", "cooperative",
+                                 "polite", "enthusiastic", "trained", "skilled", "motivated"],
+        
+        "Service Efficiency & Time Management": ["schedule", "scheduling", "timeliness", "timing", "deadlines", "delay", "delays", "waiting",
+                                             "waited", "organizing", "management", "handling", "operation", "workflow", "responsiveness",
+                                             "immediate", "quickly", "on-time", "execution", "repetition", "slowness", "inconsistency",
+                                             "registration", "flow", "disruptions", "interruptions", "missed", "adherence", "smoothly",
+                                             "performed", "delays", "chaos", "confusion", "complicated", "organizing", "implementation",
+                                             "process", "processes", "timely", "executed", "managing", "managing", "effectiveness",
+                                             "efficiency", "deadline", "responses", "immediate", "quick", "prompt", "timely", "stuck",
+                                             "coordination", "updated", "systematically", "performance", "task", "clock", "timetable",
+                                             "plan", "response", "immediately", "missed", "stuck", "repeated", "completed", "finishing",
+                                             "pauses", "backlog", "punctual", "delay", "wait", "rushed", "slow", "efficient", "organized",
+                                             "coordinated", "interrupted", "postponement", "schedule", "timing", "backlog", "queue",
+                                             "continuity", "smooth", "speed", "hiccups", "downtime", "troubleshooting", "deployment",
+                                             "responsiveness"],
+        "Food Quality & Dining": ["food", "foods", "meal", "meals", "dish", "dishes", "taste", "tasty", "delicious", "flavors",
+                              "flavor", "freshness", "fresh", "cooked", "cooking", "breakfast", "dinner", "eating", "restaurant",
+                              "salty", "hygiene", "hot", "cold", "presentation", "smells", "ingredients", "baked", "portions",
+                              "nutrition", "served", "serving", "snack", "drinks", "seafood", "seasoning", "bland", "tasteless",
+                              "spicy", "fat", "diet", "dirty", "frozen", "spices", "meat", "eat", "dining", "tables", "menu",
+                              "cuisine", "culinary", "served", "served", "spicy", "salty", "oily", "fresh", "stale", "tasty",
+                              "appetizing", "dishes", "ingredients", "cuisine", "buffet", "meals", "snacks", "salads", "soups",
+                              "sauces", "garnishes", "desserts", "nutrition", "calories", "diet", "vegan", "gluten", "organic",
+                              "freshness", "portions"],
+        
+        "Event & Program Organization": ["event", "events", "organized", "organizing", "program", "organizers", "setup", "planning",
+                                     "preparation", "process", "processes", "execution", "implemented", "schedule", "coordination",
+                                     "participation", "register", "registration", "sessions", "teamwork", "performance", "administration",
+                                     "conducted", "flow", "success", "management", "timeline", "logistics", "initiative", "implementation",
+                                     "session", "structure", "systematic", "pre-planned", "agenda", "leadership", "executed",
+                                     "contribution", "teams", "completed", "management", "conducted", "briefing", "rounds", "conferences",
+                                     "organizational", "coordinated", "managed", "seminars", "involved", "participant", "participants",
+                                     "organizations", "cooperation", "session", "structure", "governance", "leadership", "initiative",
+                                     "task", "program", "event", "activities", "scheduling", "coordination", "hosting", "managing",
+                                     "visitor", "group", "volunteers", "agenda", "briefing", "setup", "interruptions", "flow", "entertainment",
+                                     "session", "workshops", "speakers", "timeline", "agenda"]
         "Customer Service": ["service", "support", "help", "rude", "friendly"],
         "Product Quality": ["defective", "quality", "broken", "excellent"],
         "Delivery": ["late", "delivery", "shipping", "on time"],
@@ -426,7 +506,7 @@ def analyze():
         chunk[["Primary Sentiment", "Confidence"]] = chunk["Translated"].apply(lambda c: pd.Series(analyze_primary_sentiment(c)))
         return chunk
 
-    uploaded_file = st.file_uploader("📄 Upload CSV, Excel, PDF, TXT, or JSON", type=["csv", "xlsx", "pdf", "txt", "json"])
+    uploaded_file = st.file_uploader("📂Upload CSV, Excel, PDF, TXT, or JSON", type=["csv", "xlsx", "pdf", "txt", "json"])
     manual_input = st.text_area("Type or paste/enter comments manually (one per line):", height=200)
 
     if uploaded_file:
