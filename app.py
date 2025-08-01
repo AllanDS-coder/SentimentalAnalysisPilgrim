@@ -15,15 +15,15 @@ from deep_translator import GoogleTranslator
 from transformers import pipeline
 import pdfplumber
 
-# --- PAGE CONFIG ---
+# --- CONFIGURING PAGES ---
 st.set_page_config(page_title="PILGRIMAGE DEMOGRAPHICS DASHBOARD", layout="wide")
 
-# --- HELPER: Background Setup ---
+# --- SETTING UP BACKGROUND HELPER ---
 def get_base64(fp):
     with open(fp, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-# --- HOME PAGE ---
+# --- SETTING UP THE HOME PAGE ---
 def home():
     img_b64 = get_base64("pilgrimage.png")
 
@@ -82,21 +82,21 @@ def home():
     </div>
     """, unsafe_allow_html=True)
 
-    if st.button("Cross-Demographic|Demographic Analysis"):
+    if st.button("Cross-Demographic and Demographic Analysis"):
         st.session_state.page = "dashboard"
 
-    if st.button("Analyze Comments"):
+    if st.button("Sentimental and Text Classification Analysis"):
         st.session_state.page = "analyze"
 
-# --- DASHBOARD PAGE ---
+# --- SETTING UP THE DASHBOARD PAGE ---
 #def dashboard():
 def dashboard():
-    st.title("Real-Time Demographic Dashboard")
+    st.title("Cross-Demographic and Demographic Analysis Dashboard")
 
     # -- Load image
     img_b64 = get_base64("analysis.png")
 
-    # -- Inject CSS & HTML for image + overlay text
+    # -- USE THE HTML AND CSS TO ADD IMAGES AND TEXT OVERLAY 
     st.markdown(f"""
     <style>
       .custom-container {{
@@ -128,7 +128,7 @@ def dashboard():
     </style>
 
     <div class="custom-container">
-      <h2>AI-Powered Demographic Insights</h2>
+      <h2>AI-Driven Cross-Demographic and Demographic Insights</h2>
       <p>This AI-powered dashboard delivers comprehensive insights into the demographics of Hajj and Umrah pilgrims.</p>
 
       <p>Designed to empower pilgrimage authorities, the dashboard provides:</p>
@@ -148,11 +148,11 @@ def dashboard():
 
 
     
-    # --- Data input ---
-    data_source = st.radio("Select Data Source", ['Upload CSV', 'Enter API URL', 'Paste Raw CSV Text'])
+    # --- SOURCES OF DATA: DATA INPUT ---
+    data_source = st.radio("Load Data Appropriately by Select the right Data Source ", ['Upload File', 'Enter API URL', 'Paste Raw Text'])
 
     dataset = None
-    if data_source == 'Upload CSV':
+    if data_source == 'Upload File':
         uploaded_file = st.file_uploader("Upload your data file", type=['csv', 'xlsx', 'xls', 'ods', 'txt', 'pdf'])
         if uploaded_file is not None:
             file_type = uploaded_file.name.split('.')[-1].lower()
@@ -169,7 +169,7 @@ def dashboard():
                 st.error(f"Error reading file: {e}")
 
     elif data_source == 'Enter API URL':
-        api_url = st.text_input("Enter API URL returning CSV data")
+        api_url = st.text_input("Enter API URL returning data")
         if api_url:
             try:
                 response = requests.get(api_url)
@@ -177,8 +177,8 @@ def dashboard():
                 dataset = pd.read_csv(StringIO(response.text))
             except Exception as e:
                 st.error(f"Failed to fetch data from API: {e}")
-    elif data_source == 'Paste Raw CSV Text':
-        raw_csv = st.text_area("Paste your CSV text here")
+    elif data_source == 'Paste Raw Text':
+        raw_csv = st.text_area("Paste your text data here")
         if raw_csv:
             try:
                 dataset = pd.read_csv(StringIO(raw_csv))
@@ -204,7 +204,7 @@ def dashboard():
     gender_map = {'أنثى': 'أنثى : Female', 'ذكر': 'ذكر: Male'}
     dataset['Gender_English'] = dataset['الجنس Gender'].map(gender_map)
 
-    # --- FILTERS ---
+    # --- ADDING FILTERS TO FILTER DATA ANALYSIS---
     st.markdown("### Filter Data")
 
     col1, col2, col3 = st.columns(3)
@@ -252,8 +252,8 @@ def dashboard():
             (filtered_df[date_column] <= end_date)
         ]
 
-    # --- Preview filtered data ---
-    st.markdown("### Data Visualization(Filtered)")
+    # --- Preview data ---
+    st.markdown("### Data Visualization")
     #st.write(filtered_df.head())
 
     # ---- 1. Age Distribution Stats (Matplotlib) ----
@@ -344,7 +344,7 @@ def dashboard():
         st.session_state.page = "home"
 
 
-# -- Main App Routing
+# -- ROUTING TO THE MAIN APP
 def main():
     if 'page' not in st.session_state:
         st.session_state.page = "home"
@@ -356,7 +356,7 @@ def main():
 # --- ANALYZE COMMENTS PAGE ---
 def analyze():
     add_bg_from_local("background.png")
-    st.title("Sentiment Classification with Primary Model")
+    st.title("Text Classification and Sentimental Analysis")
 
     if st.button("Back to Home"):
         st.session_state.page = "home"
