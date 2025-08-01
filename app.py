@@ -211,7 +211,7 @@ def dashboard():
 
     with col1:
         gender_options = dataset['الجنس Gender'].dropna().unique()
-        selected_genders = st.multiselect("Filter by Gender", options=gender_options, default=list(gender_options))
+        selected_genders = st.multiselect("Filter by Gender: Female( ذكر) and (ذكر) Male", options=gender_options, default=list(gender_options))
 
     with col2:
         nationality_options = dataset['الجنسية Nationality'].dropna().unique()
