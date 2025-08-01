@@ -442,7 +442,7 @@ def analyze():
                                      "organizations", "cooperation", "session", "structure", "governance", "leadership", "initiative",
                                      "task", "program", "event", "activities", "scheduling", "coordination", "hosting", "managing",
                                      "visitor", "group", "volunteers", "agenda", "briefing", "setup", "interruptions", "flow", "entertainment",
-                                     "session", "workshops", "speakers", "timeline", "agenda"]
+                                     "session", "workshops", "speakers", "timeline", "agenda"], 
         "Customer Service": ["service", "support", "help", "rude", "friendly"],
         "Product Quality": ["defective", "quality", "broken", "excellent"],
         "Delivery": ["late", "delivery", "shipping", "on time"],
