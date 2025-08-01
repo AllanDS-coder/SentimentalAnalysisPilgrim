@@ -82,7 +82,7 @@ def home():
     </div>
     """, unsafe_allow_html=True)
 
-    if st.button("View Dashboard"):
+    if st.button("Cross-Demographic|Demographic Analysis"):
         st.session_state.page = "dashboard"
 
     if st.button("Analyze Comments"):
