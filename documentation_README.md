@@ -15,10 +15,10 @@ This feature can be accessed from the homepage (https://sentimentalanalysispilgr
 
 Double click on the Cross-Demographic and Demographic Analysis button to navigate to demographic and cross demographic analysis section.      
 In this section, the user can get comprehensive and interactive insights into the demographics of Hajj and Umrah pilgrims. The key characteristics analyzed here in include:    
-•	Age Distribution: Interactive visualizations illustrating the range and concentration of pilgrims’ ages.    
-•	Statistical Overview: Key metrics including minimum, maximum, mean, quartiles, and mode of pilgrim ages.    
-•	Nationality & Gender Breakdown: Detailed analysis of visitor nationalities segmented by gender.    
-•	Cross-Demographic Insights: Integrated visualizations combining age, gender, and nationality to highlight deeper demographic trends.     
+        •	Age Distribution: Interactive visualizations illustrating the range and concentration of pilgrims’ ages.    
+        •	Statistical Overview: Key metrics including minimum, maximum, mean, quartiles, and mode of pilgrim ages.    
+        •	Nationality & Gender Breakdown: Detailed analysis of visitor nationalities segmented by gender.    
+        •	Cross-Demographic Insights: Integrated visualizations combining age, gender, and nationality to highlight deeper demographic trends.     
 To leverage on this feature, scroll down on the page to a section where can input data either as a file, url, API, or textual data. The section can be found on the middle left part of the page. A user should come across the following section:       
 Load Data Appropriately by Select the right Data Source     
  
