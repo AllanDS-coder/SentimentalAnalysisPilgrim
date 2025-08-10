@@ -1,7 +1,7 @@
 import streamlit as st
 
 def show():
-    st.set_page_config(page_title="Documentation", layout="wide")
+    #st.set_page_config(page_title="Documentation", layout="wide")
 
     # Navigation button to go back to Home Page
     if st.button("Go to Home Page"):
@@ -111,3 +111,4 @@ For full code structure and debugging, visit the notebook and app.py on the publ
 
 if __name__ == '__main__':
     show()
+
