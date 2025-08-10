@@ -369,9 +369,9 @@ def main():
 def analyze():
     #st.set_page_config(page_title="Primary Model Sentiment Classifier", layout="wide")
     add_bg_from_local("background.png")
-    st.title("💬 Sentiment Classification with Primary Model")
+    st.title("Sentiment Classification with Primary Model")
 
-    if st.button("🏠 Back to Home"):
+    if st.button("Back to Home"):
         st.session_state.page = "home"
         return
 
@@ -440,7 +440,7 @@ def analyze():
         return chunk
 
     uploaded_file = st.file_uploader("📄 Upload CSV, Excel, PDF, TXT, or JSON", type=["csv", "xlsx", "pdf", "txt", "json"])
-    manual_input = st.text_area("✏️ Or paste/enter comments manually (one per line):", height=200)
+    manual_input = st.text_area("Write Or paste/enter comments manually (one per line):", height=200)
 
     if uploaded_file:
         results = []
@@ -509,5 +509,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
