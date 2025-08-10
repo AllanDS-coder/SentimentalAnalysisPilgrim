@@ -365,7 +365,7 @@ def main():
 
 # --- ANALYZE COMMENTS PAGE ---
 def analyze():
-    st.set_page_config(page_title="Primary Model Sentiment Classifier", layout="wide")
+    #st.set_page_config(page_title="Primary Model Sentiment Classifier", layout="wide")
     add_bg_from_local("background.png")
     st.title("💬 Sentiment Classification with Primary Model")
 
@@ -507,3 +507,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
