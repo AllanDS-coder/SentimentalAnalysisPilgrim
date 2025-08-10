@@ -2,8 +2,9 @@ streamlit==1.35.0
 pandas==2.2.2
 # or remove torch temporarily if not essential
 streamlit-autorefresh  # <- Remove version pinning
-torch==2.1.2
+#torch==2.1.2
 openpyxl
+torch==2.2.0
 
 pandas==2.2.2
 matplotlib==3.7.1
@@ -19,3 +20,4 @@ deep-translator==1.11.4
 requests==2.31.0
 #streamlit-autorefresh==0.0.2
 googletrans==3.1.0a0
+
