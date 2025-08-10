@@ -2,6 +2,9 @@
 
 
 import streamlit as st
+# --- PAGE CONFIG ---
+st.set_page_config(page_title="PILGRIMAGE DEMOGRAPHICS DASHBOARD", layout="wide")
+
 import base64
 import pandas as pd
 import plotly.express as px
@@ -15,8 +18,7 @@ from transformers import pipeline
 import pdfplumber
 import documentation 
 
-# --- PAGE CONFIG ---
-st.set_page_config(page_title="PILGRIMAGE DEMOGRAPHICS DASHBOARD", layout="wide")
+
 
 # --- HELPER: Background Setup ---
 def get_base64(fp):
@@ -507,4 +509,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
